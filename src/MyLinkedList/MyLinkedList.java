@@ -20,6 +20,7 @@ public class MyLinkedList<T> {
         head = newNode;
     }
     public void remove(int index) {
+        if (index < 0) throw new IndexOutOfBoundsException("Invalid index: " + index);
         if (head == null) {
             throw new IndexOutOfBoundsException("Invalid index: " + index + ", list is empty");
         }
@@ -51,6 +52,7 @@ public class MyLinkedList<T> {
         return count;
     }
     public T get(int index) {
+        if (index < 0) throw new IndexOutOfBoundsException("Invalid index: " + index);
         if (head == null) {
             throw new IndexOutOfBoundsException("Invalid index: " + index + ", list is empty");
         }
@@ -75,7 +77,7 @@ public class MyLinkedList<T> {
     }
     public void display(){
         if(head != null){
-            Node currentNode = head;
+            Node<T> currentNode = head;
             while(currentNode.getNextNode()!= null){
                 System.out.println(currentNode.getValue());
                 currentNode = currentNode.getNextNode();

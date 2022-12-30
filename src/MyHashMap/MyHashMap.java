@@ -1,7 +1,5 @@
 package MyHashMap;
 
-import static java.util.Objects.hash;
-
 public class MyHashMap<K, V> {
     private Node<K, V> head;
 
@@ -68,7 +66,7 @@ public class MyHashMap<K, V> {
         return count;
     }
 
-    public void get(Object key) {
+    public void get(K key) {
         if (head == null) {
             throw new IndexOutOfBoundsException("List is empty");
         }

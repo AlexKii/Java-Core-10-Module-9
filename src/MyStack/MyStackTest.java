@@ -20,14 +20,14 @@ public class MyStackTest {
         System.out.println("Stack.size() = " + myStack.size());
         System.out.println("________________");
 
-        myStack.pop();
-        System.out.println("Stack.pop(LIFO) = " + myStack);
+        System.out.println("myStack.pop() = " + myStack.pop());
+        System.out.println(myStack);
         System.out.println("Stack.peek(LIFO) = " + myStack.peek());
         System.out.println("Stack.size() = " + myStack.size());
         System.out.println("________________");
 
-        myStack.pop();
-        System.out.println("Stack.pop(LIFO) = " + myStack);
+        System.out.println("myStack.pop() = " + myStack.pop());
+        System.out.println(myStack);
         System.out.println("Stack.peek(LIFO) = " + myStack.peek());
         System.out.println("Stack.size() = " + myStack.size());
         System.out.println("________________");

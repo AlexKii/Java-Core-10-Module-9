@@ -9,6 +9,7 @@ public class MyStack<T> {
         head = newNode;
     }
     public void remove(int index) {
+        if (index < 0) throw new IndexOutOfBoundsException("Invalid index: " + index);
         if (head == null) {
             throw new IndexOutOfBoundsException("Invalid index: " + index + ", list is empty");
         }
@@ -69,7 +70,7 @@ public class MyStack<T> {
 
     public void display() {
         if (head != null) {
-            Node currentNode = head;
+            Node<T> currentNode = head;
             while (currentNode.getNextNode() != null) {
                 System.out.println(currentNode.getValue());
                 currentNode = currentNode.getNextNode();

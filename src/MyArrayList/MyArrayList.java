@@ -19,6 +19,7 @@ public class MyArrayList<E> {
     }
 
     public void remove(int i) {
+        if (i < 0) throw new IndexOutOfBoundsException("Invalid index: " + i);
         if (i < index) {
             data[i] = null;
             for (int j = 0; j < index - 1; j++) {
@@ -44,6 +45,7 @@ public class MyArrayList<E> {
     }
 
     public E get(int i) {
+        if (i < 0) throw new IndexOutOfBoundsException("Invalid index: " + i);
         if (i < index) return (E) data[i];
         else throw new IndexOutOfBoundsException("Invalid index: " + index + ", Size: " + size());
     }
