@@ -24,7 +24,7 @@ public class MyQueue<T> {
 
     public T poll() {
         if (head == null) {
-            throw new IndexOutOfBoundsException("Invalid index, list is empty");
+            throw new IndexOutOfBoundsException("List is empty");
         }
         Node<T> pollNode = head;
         head = head.getNextNode();
@@ -48,7 +48,7 @@ public class MyQueue<T> {
 
     public T peek() {
         if (head == null) {
-            throw new IndexOutOfBoundsException("Invalid index, list is empty");
+            throw new IndexOutOfBoundsException("List is empty");
         }
         return head.getValue();
     }

@@ -9,17 +9,14 @@ public class MyStack<T> {
         head = newNode;
     }
     public void remove(int index) {
-        if (index < 0) throw new IndexOutOfBoundsException("Invalid index: " + index);
         if (head == null) {
-            throw new IndexOutOfBoundsException("Invalid index: " + index + ", list is empty");
+            throw new IndexOutOfBoundsException("List is empty");
         }
+        if (index < 0 || index > size() - 1) throw new IndexOutOfBoundsException("Invalid index: " + index);
         if (index == 0) head = head.getNextNode();
         else {
             Node<T> removeNode = head;
             for (int i = 1; i < index; i++) {
-                if (removeNode == null) {
-                    throw new IndexOutOfBoundsException("Invalid index: " + index + ", Size: " + size());
-                }
                 removeNode = removeNode.getNextNode();
             }
             removeNode.setNextNode(removeNode.getNextNode().getNextNode());
@@ -28,7 +25,7 @@ public class MyStack<T> {
 
     public T pop() {
         if (head == null) {
-            throw new IndexOutOfBoundsException("Invalid index, list is empty");
+            throw new IndexOutOfBoundsException("List is empty");
         }
         Node<T> pollNode = head;
         head = head.getNextNode();
@@ -52,7 +49,7 @@ public class MyStack<T> {
 
     public T peek() {
         if (head == null) {
-            throw new IndexOutOfBoundsException("Invalid index, list is empty");
+            throw new IndexOutOfBoundsException("List is empty");
         }
         return head.getValue();
     }

@@ -19,7 +19,10 @@ public class MyArrayList<E> {
     }
 
     public void remove(int i) {
-        if (i < 0) throw new IndexOutOfBoundsException("Invalid index: " + i);
+        if (index == 0) {
+            throw new IndexOutOfBoundsException("List is empty");
+        }
+        if (i < 0 || i > index - 1) throw new IndexOutOfBoundsException("Invalid index: " + i + ", Size: " + size());
         if (i < index) {
             data[i] = null;
             for (int j = 0; j < index - 1; j++) {
@@ -29,7 +32,7 @@ public class MyArrayList<E> {
                 }
             }
             index--;
-        } else throw new IndexOutOfBoundsException("Invalid index: " + index + ", Size: " + size());
+        }
     }
 
     public void clear() {
@@ -45,9 +48,11 @@ public class MyArrayList<E> {
     }
 
     public E get(int i) {
-        if (i < 0) throw new IndexOutOfBoundsException("Invalid index: " + i);
-        if (i < index) return (E) data[i];
-        else throw new IndexOutOfBoundsException("Invalid index: " + index + ", Size: " + size());
+        if (index == 0) {
+            throw new IndexOutOfBoundsException("List is empty");
+        }
+        if (i < 0 || i > index - 1) throw new IndexOutOfBoundsException("Invalid index: " + i + ", Size: " + size());
+        return (E) data[i];
     }
 
     @Override

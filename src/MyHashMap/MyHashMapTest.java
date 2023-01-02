@@ -17,11 +17,11 @@ public class MyHashMapTest {
             System.out.println("Map.size() = " + myMap.size());
             System.out.println("________________");
             myMap.remove(2);
+            System.out.println("Map.size() after myMap.remove(2) = " + myMap.size());
             myMap.display();
-            System.out.println("Map.size() = " + myMap.size());
             System.out.println("________________");
 
-            myMap.get(5);
+            System.out.println("myMap.get(8) = " + myMap.get(8));
             System.out.println("________________");
 
             myMap.clear();

@@ -15,7 +15,6 @@ public class MyStackTest {
         myStack.push("Sofia");
         myStack.display();
         System.out.println("________________");
-        System.out.println("Stack push() = " + myStack);
         System.out.println("Stack.peek(LIFO) = " + myStack.peek());
         System.out.println("Stack.size() = " + myStack.size());
         System.out.println("________________");
@@ -26,8 +25,14 @@ public class MyStackTest {
         System.out.println("Stack.size() = " + myStack.size());
         System.out.println("________________");
 
-        System.out.println("myStack.pop() = " + myStack.pop());
-        System.out.println(myStack);
+        myStack.remove(0);
+        System.out.println("myStack after remove(0) = " + myStack);
+        System.out.println("Stack.peek(LIFO) = " + myStack.peek());
+        System.out.println("Stack.size() = " + myStack.size());
+        System.out.println("________________");
+
+        myStack.remove(6);
+        System.out.println("myStack after remove(6) = " + myStack);
         System.out.println("Stack.peek(LIFO) = " + myStack.peek());
         System.out.println("Stack.size() = " + myStack.size());
         System.out.println("________________");
@@ -46,8 +51,6 @@ public class MyStackTest {
         myStack.push("Kate");
         myStack.push("Nika");
         myStack.push("Sofia");
-        myStack.display();
-        System.out.println("________________");
         System.out.println("Stack push() = " + myStack);
         System.out.println("Stack.peek(LIFO) = " + myStack.peek());
         System.out.println("Stack.size() = " + myStack.size());

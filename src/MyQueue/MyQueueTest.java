@@ -25,11 +25,6 @@ public class MyQueueTest {
         System.out.println("Queue.size() = " + myQueue.size());
         System.out.println("________________");
 
-        System.out.println("Queue.poll(FIFO) = " + myQueue.poll());
-        System.out.println(myQueue);
-        System.out.println("Queue.size() = " + myQueue.size());
-        System.out.println("________________");
-
         myQueue.clear();
         System.out.println("Queue.clear() = " + myQueue);
         System.out.println("Queue.size() = " + myQueue.size());
@@ -48,11 +43,5 @@ public class MyQueueTest {
         System.out.println("Queue.size() = " + myQueue.size());
         System.out.println("Queue.peek(FIFO) = " + myQueue.peek());
         System.out.println("________________");
-
-        System.out.println("Queue.poll(FIFO) = " + myQueue.poll());
-        System.out.println(myQueue);
-        System.out.println("Queue.size() = " + myQueue.size());
-        System.out.println("________________");
-        myQueue.display();
     }
 }
