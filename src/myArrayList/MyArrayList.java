@@ -1,4 +1,4 @@
-package MyArrayList;
+package myArrayList;
 
 import java.util.Arrays;
 import java.util.StringJoiner;

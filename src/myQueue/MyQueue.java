@@ -1,29 +1,28 @@
-package MyStack;
+package myQueue;
 import java.util.StringJoiner;
 
-public class MyStack<T> {
+public class MyQueue<T> {
     private Node<T> head;
-    public void push(T value) {
-        Node<T> newNode = new Node<T>(value);
+
+    public void add(T value) {
+        Node<T> newNode = new Node<>(value);
+        if (this.head == null) head = newNode;
+        else {
+            Node<T> currentNode = head;
+            while (currentNode.getNextNode() != null) {
+                currentNode = currentNode.getNextNode();
+            }
+            currentNode.setNextNode(newNode);
+        }
+    }
+
+    public void addHead(T value) {
+        Node<T> newNode = new Node<>(value);
         newNode.setNextNode(head);
         head = newNode;
     }
-    public void remove(int index) {
-        if (head == null) {
-            throw new IndexOutOfBoundsException("List is empty");
-        }
-        if (index < 0 || index > size() - 1) throw new IndexOutOfBoundsException("Invalid index: " + index);
-        if (index == 0) head = head.getNextNode();
-        else {
-            Node<T> removeNode = head;
-            for (int i = 1; i < index; i++) {
-                removeNode = removeNode.getNextNode();
-            }
-            removeNode.setNextNode(removeNode.getNextNode().getNextNode());
-        }
-    }
 
-    public T pop() {
+    public T poll() {
         if (head == null) {
             throw new IndexOutOfBoundsException("List is empty");
         }

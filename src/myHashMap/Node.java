@@ -1,4 +1,4 @@
-package MyHashMap;
+package myHashMap;
 
 public class Node<K, V> {
     private K key;

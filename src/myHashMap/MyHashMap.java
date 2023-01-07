@@ -1,13 +1,13 @@
-package MyHashMap;
+package myHashMap;
 
 public class MyHashMap<K, V> {
     private Node<K, V> head;
 
     public void put(K key, V value) {
-        Node<K, V> newNode = new Node<K, V>(key, value);
+        Node<K, V> newNode = new Node<>(key, value);
         if (head == null) head = newNode;
         else {
-            Node currentNode = head;
+            Node<K, V> currentNode = head;
             boolean temp = true;
             while (currentNode.getNextNode() != null) {
                 if (newNode.getKey().equals(currentNode.getKey())) {
@@ -18,7 +18,7 @@ public class MyHashMap<K, V> {
             }
             if (temp) {
                 currentNode = head;
-                while (currentNode.getNextNode() != null && temp) {
+                while (currentNode.getNextNode() != null) {
                     currentNode = currentNode.getNextNode();
                 }
                 currentNode.setNextNode(newNode);
@@ -83,7 +83,7 @@ public class MyHashMap<K, V> {
 
     public void display() {
         if (head != null) {
-            Node currentNode = head;
+            Node<K, V> currentNode = head;
             while (currentNode.getNextNode() != null) {
                 System.out.println(currentNode.getKey() + " = " + currentNode.getValue());
                 currentNode = currentNode.getNextNode();

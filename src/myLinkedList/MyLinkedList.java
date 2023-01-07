@@ -1,4 +1,4 @@
-package MyLinkedList;
+package myLinkedList;
 
 import java.util.StringJoiner;
 
@@ -7,7 +7,7 @@ public class MyLinkedList<T> {
     private Node<T> tail;
 
     public void add(T value) {
-        Node<T> newNode = new Node<T>(value);
+        Node<T> newNode = new Node<>(value);
         if (head == null) {
             head = tail = newNode;
             head.setPrevNode(null);

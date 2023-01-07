@@ -1,4 +1,4 @@
-package MyQueue;
+package myQueue;
 
 public class Node<T> {
     private T value;
